@@ -39,8 +39,8 @@
 class Solution {
 public:
     //Sorting solution
-    //Time Complexity -O(n)
-    //Space Complexity -O(n)
+    //Time Complexity -O(nlogn)
+    //Space Complexity -O(1)
     bool static comp(vector<int> &a, vector<int> &b){
         return a[1]>b[1];
     }
