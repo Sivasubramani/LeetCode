@@ -65,3 +65,54 @@ public:
         return -1;
     }
 };
+
+//Solutio 2
+class Solution {
+public:
+    bool static comp(vector<int> &a, vector<int>&b){
+        return a[2] < b[2];
+    }
+    int find(int i,vector<int> &p){
+        if(p[i] != i) p[i]= find(p[p[i]],p);
+        return p[i];
+    }
+        int minimumCost(int n, vector<vector<int>>& A) {
+            vector<vector<pair<int,int>>> graph(n+1);
+            vector<int> m(n+1,INT_MAX);
+            vector<bool> v(n+1,false);
+            
+            for(auto a: A){
+                graph[a[0]].push_back({a[2],a[1]});
+                graph[a[1]].push_back({a[2],a[0]});
+            }
+            
+            priority_queue <pair<int,int>, vector<pair<int,int>>,greater<pair<int,int>>> pq;
+            pq.push({0,1});
+            int res =0;
+            int N=0;
+            while( !pq.empty() && N<n){
+                pair<int,int> x = pq.top();
+                int cost = x.first;
+                int conn = x.second;
+                pq.pop();
+                if(v[conn]) continue;
+                v[conn] = true;
+                res += cost;
+                N++;  
+                cout<<n<<endl;
+                for(auto a : graph[conn]){
+                    if(!v[a.second]){
+                        if(a.first < m[a.second]){
+                            m[a.second] = a.first;
+                            pq.push({a.first,a.second});
+                        }
+                            
+                        
+                    }
+                }
+            }
+            cout<<""<<endl;
+            return N==n ? res :-1;
+            
+}
+};
