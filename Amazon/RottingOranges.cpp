@@ -38,6 +38,9 @@
 //     1 <= m, n <= 10
 //     grid[i][j] is 0, 1, or 2.
 
+//Time complexity is O(mn) where m,n are no. of rows and cols
+//Space compelxity is O(mn) worst case if grid contains only rotten oranges
+
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& A) {
