@@ -86,4 +86,4 @@ public:
 
 
 // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Sorting the Sentence.
-// Memory Usage: 6.5 MB, less than 15.52% of C++ online submissions for Sorting the Sentence.
+// Memory Usage:  6.5 MB, less than 15.52% of C++ online submissions for Sorting the Sentence.
