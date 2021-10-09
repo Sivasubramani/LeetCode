@@ -29,7 +29,8 @@ logger.shouldPrintMessage(8, "bar");  // 8 < 12, return false
 logger.shouldPrintMessage(10, "foo"); // 10 < 11, return false
 logger.shouldPrintMessage(11, "foo"); // 11 >= 11, return true, next allowed timestamp for "foo" is 11 + 10 = 21
 
- 
+ //Space Complexity O(n)
+//Time Complexity O(1) for one iteration O(n) for all iteration
 
 Constraints:
 
