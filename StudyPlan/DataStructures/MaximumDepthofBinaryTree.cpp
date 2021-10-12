@@ -1,4 +1,5 @@
 // 104. Maximum Depth of Binary Tree
+// Easy
 
 // Given the root of a binary tree, return its maximum depth.
 
@@ -33,6 +34,8 @@
 //     The number of nodes in the tree is in the range [0, 104].
 //     -100 <= Node.val <= 100
 
+
+
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
@@ -44,11 +47,33 @@
 //  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 //  * };
 //  */
-
 class Solution {
 public:
+    //DFS
+//   [Time Complexity: O(n)] [Space Complexity: O(H)]
     int maxDepth(TreeNode* root) {
         if(!root) return 0;
         return max(maxDepth(root->left),maxDepth(root->right))+1;
+    }
+    
+    //BFS
+  //   [Time Complexity: O(n)] [Space Complexity: O(H)]
+        int maxDepth(TreeNode* root) {
+        if(!root) return 0;
+        queue<TreeNode*> s;
+        s.push(root);
+        int k=0;
+        while(!s.empty()){
+            int size = s.size();
+            for(int i=0;i<size;i++){
+            TreeNode* x = s.front();
+            s.pop();
+            if(x->left) s.push(x->left);
+            if(x->right) s.push(x->right);
+            }
+            k++;
+
+        }    
+        return k;
     }
 };
