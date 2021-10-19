@@ -40,6 +40,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//Time Compexity : O(n)
 class Solution {
 public:
     int dfs(TreeNode* root,vector<vector<int>> &res){
